@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitrix Guide</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div id="header"></div>    <!-- Здесь подгружается header.html -->
+    <div id="sidebar"></div>   <!-- Здесь подгружается sidebar.html -->
+
+    <main class="new-contact">
+        <div class="new-contact-content">
+            <h2>Как добавить новый контакт в базу?</h2>
+            <p>
+                Начнем с того, как выглядит главный экран CRM, когда входишь в базу. 
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-home.jpg" alt="Screenshot-home">
+            <p class="caption">Экран CRM при входе</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Перейдем в сущность <b>Контакты</b>.
+                Нажмем на <b>Клиенты</b> -> <b>Контакты</b>.
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-home-array.jpg" alt="Screenshot-home">
+            <p class="caption">Экран CRM при входе</p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-contacts-menu.jpg" alt="Screenshot-home">
+            <p class="caption">Экран CRM при входе</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Для начала проверим, есть ли вообще интересующий нас контакт в базе. 
+                Зададим его в поиске.
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-contact-check.jpg" alt="Screenshot-home">
+            <p class="caption">Экран CRM.Контакты</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Оказалось, что такой контакт есть. Значит, создавать контакт не требуется. 
+                А если его нет? Или что, если это просто однофамилец, да еще и с таким же именем?
+            </p>
+            <p>
+                Создадим новый!
+            </p>
+            <p>
+                Нажали заленую кнопку <b>Создать</b>.
+                Нам выйдет свежая карточка. Давайте её заполним!
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-contact-card.jpg" alt="Screenshot-home">
+            <p class="caption">Карточка Контакта</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Заполняем все необходимые поля. Проверьте, что вы заполнили соответственно 
+                информации о контакте его <b>Имя</b>, <b>Фамилию</b>, <b>Должности</b> в обоих полях,
+                 <b>Компанию</b> и <b>Номер телефона</b>.
+            </p>
+            <p>
+                Когда вы будете заполнять компанию она может оказаться среди существующих, достаточно 
+                просто выбрать её из списка. А если её не оказалось в базе?
+            </p>
+            <p>
+                Создайте новую компанию!
+            </p>
+            <p>
+                Необязательно выходить из карточки, чтобы создать новую компанию. Можно просто 
+                нажать на <b>Создать новую компанию</b>. Она добавится в базу автоматически!
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-new-company-contact.jpg" alt="Screenshot-home">
+            <p class="caption">Карточка Контакта</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Добавьте также (если известно) образование, опыт работы и пол.
+            </p>
+            <p>
+                Идеально, если часть с образованием и опытом работы взята из отчета one-pager'a 
+                и выглядит таким образом:
+            </p>
+        </div>
+        <div class="image-caption">
+            <img src="screenshots/screen-contact-card-edu.jpg" alt="Screenshot-home">
+            <p class="caption">Карточка Контакта</p>
+        </div>
+        <div class="new-contact-content">
+            <p>
+                Если вы заполнили все необходимые поля - замечательно!
+                Если у вас есть больше информации, заполните все поля по максимуму насколько можете.
+                Не забудьте при наличии добавить <b>CV (Резюме)</b> контакта, <b>LinkedIn</b> - это очень важная информация для полноценности информации в базе. Хорошо, если присутствует
+                хотя бы одно из этого. Если добавили и то, и другое - идеально!
+            </p>
+            <p>
+                Обращаю ваше внимание, внимательно следить за тем, чтобы информация не дублировалась (не
+                добавлялись одинаковые <b>Контакты</b> или <b>Компании</b>). 
+                Это затрудняет работу с базой.
+            </p>
+            <p>
+                На этом всё! Не забывайте нажимать <b>Сохранить</b>! Можете двигаться дальше!
+            </p>
+        </div>
+    </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
