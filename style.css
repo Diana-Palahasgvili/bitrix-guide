@@ -1,0 +1,293 @@
+body {
+  margin: 0; /* убираем стандартные отступы браузера */
+  font-family: Arial, sans-serif; /* шрифт для текста */
+  background: url('images/Фон.jpg') no-repeat center center fixed;
+  background-size: cover;
+  transition: margin-left 0.3s; /* плавное смещение контента при открытии меню */   
+  padding-top: 60px;
+}
+
+/* Шапка */
+.header {
+  background: white; /* фон шапки */
+  height: 60px;
+  color: #1574e8; /* цвет текста в шапке */
+  padding: 10px 20px; /* внутренние отступы шапки */
+  font-size: 20px; /* размер шрифта */
+  font-weight: bold; /* жирный текст */
+  display: flex; /* размещаем элементы в шапке в линию */
+  align-items: center; /* выравниваем элементы по вертикали */
+  justify-content: space-between; /* логотип слева, бургер справа */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* добавили тень под шапкой */
+  transition: margin-left 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 1000; /* чтобы было поверх всего */
+}
+
+.header h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* центрируем */
+  margin: 0;
+  font-size: 28px;
+  color: #1574e8; /* синий цвет */
+  
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #1574e8; /* цвет фона */
+  color: white; /* цвет текста */
+  text-align: center; /* выравнивание текста */
+  padding: 10px 0; /* отступы сверху и снизу */
+  font-size: 14px; /* размер текста */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+}
+
+
+
+footer a {
+  color: #ffffff; /* цвет ссылки */
+  text-decoration: underline; /* подчеркивание */
+}
+
+footer a:hover {
+  color: #bcdcff; /* цвет при наведении */
+}
+
+body.menu-open .header {
+  margin-left: 250px; /* сдвигаем шапку, как контент */
+  transition: margin-left 0.3s; /* плавный переход */
+}
+
+/* Боковое меню */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; /* Меню всегда на месте, но смещается transform */
+  width: 250px;
+  height: 100%;
+  text-align: center; /* По центру */
+  padding-top: 60px;
+  transform: translateX(-250px); /* скрыто */
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  padding: 0;
+  background: linear-gradient(180deg, #1574e8, #125ab5);
+  box-shadow: 3px 0 8px rgba(0,0,0,0.2);
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+    margin: 0;
+    padding: 18px 20px; /* Отступы вокруг заголовка */
+    color: white; /* Цвет текста */
+    font-size: 20px;
+    text-align: center; /* По центру */
+}
+
+.sidebar.active {
+  transform: translateX(0); /* плавный выезд */
+}
+
+.sidebar ul li {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar.active ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sidebar.active ul li:nth-child(1) { transition-delay: 0.1s; }
+.sidebar.active ul li:nth-child(2) { transition-delay: 0.2s; }
+.sidebar.active ul li:nth-child(3) { transition-delay: 0.3s; }
+.sidebar.active ul li:nth-child(4) { transition-delay: 0.4s; }
+.sidebar.active ul li:nth-child(5) { transition-delay: 0.5s; }
+.sidebar.active ul li:nth-child(6) { transition-delay: 0.6s; }
+.sidebar.active ul li:nth-child(7) { transition-delay: 0.7s; }
+
+
+.sidebar ul {
+  list-style: none; /* убираем стандартные маркеры списка */
+  margin: 0; /* убираем внешние отступы */
+  padding: 0; /* убираем внутренние отступы */
+}
+
+.sidebar ul li a {
+  display: block; /* каждая ссылка занимает всю ширину строки */
+  padding: 12px 20px; /* отступы внутри каждой ссылки */
+  color: white; /* цвет текста ссылок */
+  text-decoration: none; /* убираем подчеркивание */
+  font-weight: bold; /* делаем текст жирным */
+  border-radius: 5px;  /* Скругляем углы */
+  transition: background 0.3s, transform 0.2s;
+}
+
+.sidebar ul li a:hover {
+  background: #444; /* цвет фона при наведении */
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px); /* Лёгкий сдвиг при наведении */
+}
+
+/* Кнопка-бургер */
+.burger {
+  font-size: 28px; /* размер иконки бургера */
+  cursor: pointer; /* курсор в виде руки при наведении */
+  margin-left: 0;
+  color: #1574e8;
+}
+
+.burger:hover {
+  color: #0b59c5;       /* цвет бургера при наведении */
+}
+
+
+.content {
+  transition: margin-left 0.3s ease-in-out; /* плавное смещение контента */
+}
+
+body.menu-open .burger {
+  margin-left: 250px;  /* сдвигаем бургер на ширину меню */
+  transition: margin-left 0.3s ease;
+}
+
+body.menu-open .header {
+  margin-left: 0px; /* отодвигаем контент при открытом меню */
+  transition: margin-left 0.3s; /* плавное смещение контента */
+}
+
+body.menu-open .content {
+  margin-left: 0px; /* отодвигаем контент при открытом меню */
+  transition: margin-left 0.3s; /* плавное смещение контента */
+}
+
+.welcome-card {
+  max-width: 600px;
+  margin: 50px auto; /* центрируем по горизонтали */
+  padding: 20px 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.welcome-card h2 {
+  color: #1574e8;
+  margin-bottom: 10px;
+}
+
+.welcome-card b {
+  color: #333;
+}
+
+.btn-blue {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #1574e8;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-blue:hover {
+  background: #0b59c5;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 40px; /* расстояние между колонками */
+  margin: 10px auto;
+  max-width: 1300px;
+}
+
+
+.content img {
+  display: block;               /* Убираем пробелы вокруг картинки */
+  max-width: 90%;               /* Картинка не выходит за пределы контейнера */
+  margin: auto 20px;            /* Центрируем по горизонтали */
+  margin-left: 0%;
+  transition: transform 0.3s ease-in-out;    /* Анимация при наведении */
+}
+
+.content img:hover {
+  transform: scale(1.1);       /* Легкое увеличение при наведении */
+}
+
+@font-face {
+  font-family: 'JetBrainsSans';
+  src: url('https://fonts-online.ru/fonts/jetbrains-sans-beta-damnxav') format('truetype');
+}
+
+.diagramm-description{
+  max-width: 770px;
+  flex: 0 0 50%;
+  margin: 40px auto; /* центрируем по горизонтали */
+  padding: 20px 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  line-height: 1.6;
+  padding: 20px;
+  font-size: larger;
+  font-family: 'JetBrainsSans', sans-serif;
+}
+
+.new-contact {
+  max-width: 1870px;
+  margin: 40px 290px 40px 280px; /* центрируем по горизонтали */
+  padding: 20px 25px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  line-height: 1.6;
+  padding: 10px 20px;
+  font-size: larger;
+  font-family: 'JetBrainsSans', sans-serif;
+}
+
+.new-contact-content p{
+    margin: 20px 0px;
+}
+
+.new-contact-content h2 {
+    margin: 0px;
+}
+
+.image-caption {
+  text-align: center;    /* Центрируем всё содержимое */
+  margin: 10px 0 0;        /* Отступы вокруг контейнера */
+}
+
+.image-caption img {
+  max-width: 90%;
+  display: block;
+  margin: 0 auto;        /* Центрируем изображение */
+}
+
+.caption {
+  font-size: 12px;       /* Размер шрифта подписи */
+  color: #333;           /* Цвет текста */
+  margin: 10px 0 0;       /* Отступ сверху */
+  font-style: italic;    /* Можно сделать курсив для аккуратности */
+}
